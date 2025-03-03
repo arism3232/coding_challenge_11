@@ -58,5 +58,23 @@ class Library {
     listBooks() {
         this.books.map(book => console.log(book.getDetails))
     };
-    
+
+    // Task4- Implementing Book Borrowing
+    addBorrower(borrower) {
+        this.borrowers.push(borrower)
+    };
+    lendBook(borrowerId, isbn) {
+        const book = this.books.find(book => book.isbn === isbn)
+        const borrower = this.borrowers.find(borrower => borrower.borrowerId === borrowerId)
+        if (book && borrower) {
+            if (book.copies > 0) {
+                book.updateCopies(-1)
+                borrower.borrowBook(book.title)
+            } else {
+                console.log("Book currently not available for borrowing")
+            }
+        } else {
+            console.log("No book found with matching description")
+        }
+    };
 }
