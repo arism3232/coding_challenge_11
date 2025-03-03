@@ -5,13 +5,13 @@ class Book {
         this.author = author;
         this.isbn = isbn;
         this.copies = copies;
-    };
+    }; // Creating class with strings and numbers.
     getDetails() {
         return `Title: ${this.title}, Author: ${this.author}, ISBN: ${this.isbn}, Copies: ${this.copies}`;
-    };
+    }; // Adding method that returns a formtted string of book detials.
     updateCopies(quantity) {
         this.copies += quantity
-    };
+    }; // Adding a method that modifies the available copies when a book is borrowed or returned. 
 };
 // Test cases
 const book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 123456, 5);
@@ -28,13 +28,13 @@ class Borrower {
         this.name = name;
         this.borrowerId = borrowerId; 
         this.borrowedBooks = [];
-    };
+    }; // Creating class with various properties including string, number, and array.
     borrowBook(book) {
         this.borrowedBooks.push(book)
-    };
+    }; // Adding a method that adds a book title to borrowedBooks.
     returnBook(book) {
         this.borrowedBooks = this. borrowedBooks.filter(b => b !== book)
-    };
+    }; // Adding a method that removes book from borrowedBooks.
 };
 // Test Cases
 const borrower1 = new Borrower("Alice Johnson", 201);
@@ -51,13 +51,13 @@ class Library {
     constructor() {
         this.books = [];
         this.borrowers = [];
-    };
+    }; // Creating a class with array of book and borrower instances. 
     addBook(book) {
         this.books.push(book)
-    };
+    }; // Adding new book to the library
     listBooks() {
         this.books.map(book => console.log(book.getDetails()))
-    };
+    }; // Logging book details.
 
     // Task4- Implementing Book Borrowing
     addBorrower(borrower) {
@@ -76,7 +76,7 @@ class Library {
         } else {
             console.log("No book found with matching description")
         }
-    };
+    }; // Adding method that checks book availability, reduces book cipies by 1, and updates borrower's list. 
 
     // Task5- Implementing Book Returns
     returnBook(borrowerId, isbn) {
@@ -88,7 +88,7 @@ class Library {
                 borrower.returnBook(book.title)
             }
         }
-    };
+    }; // Adding a method to increase available copies, and removing book from borrower's list. 
 };
 // Test Cases
 //task3
