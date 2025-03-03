@@ -56,7 +56,7 @@ class Library {
         this.books.push(book)
     };
     listBooks() {
-        this.books.map(book => console.log(book.getDetails))
+        this.books.map(book => console.log(book.getDetails()))
     };
 
     // Task4- Implementing Book Borrowing
